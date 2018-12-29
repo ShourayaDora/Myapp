@@ -2,7 +2,7 @@ var btnmenu=document.getElementById("btn-menu");
 var icon=document.getElementById("icon");
 btnmenu.addEventListener("click",toggleMenu);
 function toggleMenu(event)
-{
+{   
 	var divoverlay=document.getElementsByClassName("overlay")[0];
 var speed=10;
 	if(icon.className=="fas fa-bars"){

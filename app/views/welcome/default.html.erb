@@ -10,23 +10,12 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 	</head>
-  <script type="text/javascript">
- function downloadJSAtOnload() {
- var element = document.createElement("script");
- element.src = "script.js";
- document.body.appendChild(element);
- }
- if (window.addEventListener)
- window.addEventListener("load", downloadJSAtOnload, false);
- else if (window.attachEvent)
- window.attachEvent("onload", downloadJSAtOnload);
- else window.onload = downloadJSAtOnload;
- </script>
+
 
 	<body>
 		<h1>Welcome</h1>
 		<div class="button">
-		<a href="#" id="btn-menu" class="btn-open"><i id="icon" class="fas fa-bars" ></i></a>
+		<a href="#" id="btn-menu" class="btn-open"><i id="icon"  class="fas fa-bars" ></i></a>
 
 		</div>
 
@@ -61,8 +50,55 @@
 			</div>
 		</div>
 		</div>
-		<!--<script src="script.js"></script>-->
 
+
+<%= javascript_include_tag "script" %>
+
+<!--	<script>
+		console.log('Loaded');
+		var btnmenu=document.getElementsByClassName("button")[0];
+		var icon=document.getElementById("icon");
+		console.log(icon);
+		btnmenu.addEventListener("click",toggleMenu);
+		function toggleMenu(event)
+		{
+			var divoverlay=document.getElementsByClassName("overlay")[0];
+		var speed=10;
+			if(icon.className=="fas fa-bars"){
+				icon.className="fas fa-times";
+				fadeIn(divoverlay,speed);
+			}
+			else
+				{
+				icon.className="fas fa-bars";
+					fadeOut(divoverlay,speed);
+				}
+
+
+		}
+		function fadeIn(elem,speed)
+		{
+			console.log('Fade in')
+			var c=setInterval(function(){
+				elem.style.opacity=Number(elem.style.opacity)+0.02;
+				if(elem.style.opacity==1)
+					clearInterval(c);
+			},speed);
+		}
+		function fadeOut(elem,speed)
+		{
+			console.log('Fade Out')
+			var c=setInterval(function(){
+				elem.style.opacity=Number(elem.style.opacity)-0.02;
+				if(elem.style.opacity<=0)
+					{
+						elem.style.opacity=0;
+				   clearInterval(c);
+					}
+			},speed);
+		}
+
+	</script>-->
 
 
 	</body>
